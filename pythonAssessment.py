@@ -9,3 +9,7 @@ def count_specific_word(text, search_word):
     words = re.findall(r'\b\w+\b', text_lower)
     count = words.count(search_lower)
     return count
+
+def identify_most_common_word(text):
+    if not text:
+    
