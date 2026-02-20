@@ -42,6 +42,37 @@ def calculate_average_word_length(text):
         
     average_length = total_length / len(words)
     return average_length
+
+def count_paragraphs(text):
+    if not text or not text.strip():
+        return 1
+    paragraphs = text.split('\n\n')
+    non_empty_paragraphs = []
+    for para in paragraphs:
+        if para.strip():
+            non_empty_paragraphs.append(para)
+    
+    paragraph_count = len(non_empty_paragraphs)
+    if paragraph_count == 0:
+            return 1
+    return paragraph_count                
+
+def count_sentences(text):
+    if not text or not text.strip():
+        return 1
+    sentences = re.split(r'[.!?]+', text)
+    non_empty_sentences = []
+    for sentence in sentences:
+        if sentence.strip():
+            non_empty_sentences.append(sentence)
+            
+    sentence_count = len(non_empty_sentences)
+    if sentence_count == 0:
+        return 1    
+    return sentence_count
+    
+    
+    
     
     
                     
